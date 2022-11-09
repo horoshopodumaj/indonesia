@@ -45,6 +45,7 @@ a {
         display: grid;
         grid-template-columns: auto 1fr auto;
         padding: 0 $main_shift;
+        align-items: center;
     }
 
     &__center{
@@ -58,13 +59,30 @@ a {
     text-decoration: none;
     letter-spacing: 1%;
 
-    &:visited{
+    &:visited {
         color: $main_lite;
     }
 
-    &__title{
-        font-size 1.3rem;
-        font-weight 700;
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+}
+
+.main-nav {
+    &__list {
+        display: flex;
+    }
+
+    &__link {
+        color: $main_lite;
+        text-decoration none;
+        padding 1.8rem 1.38rem;
+        display: inline-block;
+
+        &:visited {
+            color: $main_lite;
+        }
     }
 }
 

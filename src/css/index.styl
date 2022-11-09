@@ -171,3 +171,28 @@ a {
         }
     }
 }
+
+.social-networks {
+    position: absolute;
+    left: 0;
+    top: 4rem;
+
+    &__title {
+        writing-mode: vertical-rl;
+        margin-bottom: 1.3rem;
+    }
+
+    &__item {
+        margin-bottom: 1rem;
+    }
+
+    &__link {
+        display: inline-block;
+        opacity: 1;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

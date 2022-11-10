@@ -11,57 +11,67 @@ html(lang="ru")
         script(src='/js/libs/gallery.js')
         link(rel="stylesheet" href="/css/index.css")
     body
-        .cover-space
-        header.header
-            .header__content
-                a.logo(href='/')
-                    h1.logo__title QWERy
-                nav.main-nav.header__center
-                    ul.main-nav__list
-                        li.main-nav__item
-                            a.main-nav__link.main-nav__link_active(href='#') Information
-                        li.main-nav__tem
-                            a.main-nav__link(href='#') About&nbsp;us 
-                        li.main-nav__tem
-                            a.main-nav__link(href='#') Culture
-                label.search
-                    .search__icon
-                    input.search__form(text='text' placeholder='Search')
-        section.section.section__main
-            .main-title 
-                .main-title__summary Explore the Nature Beauty 
-                h1.main-title__text Discover 
-                    span.main-title__text_regular Wonderful Indonesia
-            .social-networks 
-                h3.social-networks__title Follow&nbsp;us 
-                ul.social-networks__list 
-                    li.social-networks__item 
-                        a.social-networks__link(href='#')
-                            .icon__instagram 
-                    li.social-networks__item 
-                        a.social-networks__link(href='#')
-                            .icon__twitter 
-                    li.social-networks__item 
-                        a.social-networks__link(href='#')
-                            .icon__facebook
-            .scroll-down 
-                |Scroll down 
-                .scroll-down__icon.icon__arrow_downward
-        .content
-            section.section-cols 
-                img.section-col.section-col__image(src='/images/enjoy.jpg' alt='Mountains')
-                .section-col.section-col__content 
-                    .main-title.main-title_small 
-                        span.main-title__summary EAST NUSA TENGGARA 
-                        h2.main-title__text Have you enjoyed&nbsp;your holiday?
-                    p You will be&nbsp;amazed if&nbsp;you take part in&nbsp;this sailing Komodo island tour package. So&nbsp;it&nbsp;is&nbsp;also mandatory for you, besides enjoying Komodo tourism on&nbsp;Komodo Island, you also have to&nbsp;taste the marine tourism. The beautiful waters of&nbsp;Komodo will make you meet many travelers from other countries.
-                    a.arrow-link(href='#')
-                        | read more 
-                        .arrow-link__icon.icon__arrow_rightward
-            section.section 
-                #gallery.gallery 
-                    each imageUrl in ['/images/gallery.jpg','/images/gallery1.jpg','/images/gallery2.jpg','/images/gallery3.jpg','/images/gallery4.jpg']
-                        .gallery__slide(style={'background-image': `url("${imageUrl}")`})
+        .page
+            header.header
+                .header__content
+                    a.logo(href='/')
+                        h1.logo__title QWERy
+                    nav.main-nav.header__center
+                        ul.main-nav__list
+                            li.main-nav__item
+                                a.main-nav__link.main-nav__link_active(href='#') Information
+                            li.main-nav__tem
+                                a.main-nav__link(href='#') About&nbsp;us 
+                            li.main-nav__tem
+                                a.main-nav__link(href='#') Culture
+                    label.search
+                        .search__icon
+                        input.search__form(text='text' placeholder='Search')
+            .cover-space
+            section.section__main
+                .main-title 
+                    .main-title__summary Explore the Nature Beauty 
+                    h1.main-title__text Discover 
+                        span.main-title__text_regular Wonderful Indonesia
+                .social-networks 
+                    h3.social-networks__title Follow&nbsp;us 
+                    ul.social-networks__list 
+                        li.social-networks__item 
+                            a.social-networks__link(href='#')
+                                .icon__instagram 
+                        li.social-networks__item 
+                            a.social-networks__link(href='#')
+                                .icon__twitter 
+                        li.social-networks__item 
+                            a.social-networks__link(href='#')
+                                .icon__facebook
+                .scroll-down 
+                    |Scroll down 
+                    .scroll-down__icon.icon__arrow_downward
+            .content
+                section.section.section-cols 
+                    img.section-col.section-col__image(src='/images/enjoy.jpg' alt='Mountains')
+                    .section-col.section-col__content 
+                        .main-title.main-title_small 
+                            span.main-title__summary EAST NUSA TENGGARA 
+                            h2.main-title__text Have you enjoyed&nbsp;your holiday?
+                        p You will be&nbsp;amazed if&nbsp;you take part in&nbsp;this sailing Komodo island tour package. So&nbsp;it&nbsp;is&nbsp;also mandatory for you, besides enjoying Komodo tourism on&nbsp;Komodo Island, you also have to&nbsp;taste the marine tourism. The beautiful waters of&nbsp;Komodo will make you meet many travelers from other countries.
+                        a.arrow-link(href='#')
+                            | read more 
+                            .arrow-link__icon.icon__arrow_rightward
+                section.section 
+                    #gallery.gallery 
+                        each imageUrl in ['/images/gallery.jpg','/images/gallery1.jpg','/images/gallery2.jpg','/images/gallery3.jpg','/images/gallery4.jpg']
+                            .gallery__slide(style={'background-image': `url("${imageUrl}")`})
+                                .gallery__content
+                                    .content_small
+                                        .main-title.main-title_small.main-title_centered
+                                            span.main-title__summary Bromo
+                                            h2.main-title__text Steady your steps, we&nbsp;will climb together!
+                                        p Enjoying the vast expanse of&nbsp;the sea of&nbsp;sand, witnessing the splendor of&nbsp;Mount Semeru that soars into the sky, and gazing at&nbsp;the beauty of&nbsp;the sun moving out of&nbsp;its bed or&nbsp;otherwise enjoying the dim twilight from the Bromo ridge is&nbsp;an&nbsp;unforgettable experience when visiting Bromo.
+                                        a.arrow-link.arrow-link_centered(href='#')
+                                            | read more 
+                                            .arrow-link__icon.icon__arrow_rightward
 
 
         script(src='/js/index.js')

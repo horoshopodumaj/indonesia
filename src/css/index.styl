@@ -5,6 +5,7 @@ $main_highlite_title = #FFC178
 $main_buttons = #FFA343
 $main_border = rgba($main_lite, 30%)
 $main_shift = 4.7rem;
+$border_radius = 0.4444em;
 
 html,
 body {
@@ -312,6 +313,20 @@ a {
     }
 }
 
+.button {
+    border: none;
+    background: $main_buttons;
+    font: 700 0.9rem/1 'Open Sans', sans-serif;
+    padding: 1.6em 4.5em 1.4em;
+    border-radius: $border_radius;
+    cursor pointer;
+    transition: background 0.3s;
+
+    &:hover {
+        background: $main_highlite;
+    }
+}
+
 /*Gallery*/
 
 .gallery {
@@ -329,6 +344,30 @@ a {
         right: 0;
         text-align: center;
         background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+    }
+}
+
+/*Footer*/
+
+.start {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+        font-size 2.66rem;
+        font-weight 700;
+        margin-right 3rem;
+    }
+
+    &__desc {
+        font-size 1.22rem
+        margin-right 3rem;
+    }
+
+    &__content {
+        display: flex;
+        align-items: baseline;
     }
 }
 

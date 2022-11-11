@@ -3,6 +3,7 @@ $main_lite = #fff
 $main_highlite = #FBD784
 $main_highlite_title = #FFC178
 $main_buttons = #FFA343
+$main_border = rgba($main_lite, 30%)
 $main_shift = 4.7rem;
 
 html,
@@ -282,17 +283,19 @@ a {
 }
 
 .section-col {
-    &:first-child {
+    &__image {
         width: 40%;
     }
 
-    &:last-child{
+    &__content{
         width: 44%;
     }
+}
 
-    &__image {
-        width: 100%;
-    }
+.section-border {
+    padding-bottom 3rem;
+    border-bottom: 1px solid $main_border;
+    margin-bottom 3rem;
 }
 
 .arrow-link {
@@ -372,11 +375,11 @@ a {
     }
 
     .section-col{
-        &:first-child {
+        &__image{
             width: 40%;
         }
 
-        &:last-child {
+        &__content {
             width: 50%;
         }
     }
@@ -395,11 +398,11 @@ a {
 
 @media screen and (max-width: 1380px) {
     .section-col{
-        &:first-child {
+        &__image {
             width: 43%;
         }
 
-        &:last-child {
+        &__content {
             width: 50%;
         }
     }

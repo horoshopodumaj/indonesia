@@ -371,6 +371,56 @@ a {
 
 /*Footer*/
 
+.subscribe {
+    width: 27%;
+
+    &__title {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height 1.4;
+        margin-bottom 1.38em;
+    }
+}
+
+.email {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border-bottom: 1px solid $main_border;
+
+    &__form {
+        background: none;
+        border: none;
+        font: 0.83rem/1 'Open Sans', sans-serif;
+        padding: 1.1em 0.77em 1.77em;
+        color: $main_lite;
+
+        &::placeholder {
+            color: rgba($main_lite, 50%);
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__button {
+        position: relative;
+        padding: 0;
+        height: 100%;
+        width: 3.55rem;
+        border-radius: $border_radius $border_radius 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__icon {
+            position: absolute;
+            margin-bottom: 0 0 0 -0.2rem;
+        }
+    }
+}
 
 
 

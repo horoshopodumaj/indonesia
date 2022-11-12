@@ -557,16 +557,46 @@ a {
     .burger-menu {
         display: block;
         position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0
+        z-index: 999;
+        width: 70vw;
         background: black
 
         &__content {
-            display: block
+            height: 100vh;
+            padding: 1rem 0 2rem;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
         }
     }
 
     .main-nav {
-        
+        display: block;
+        margin-bottom: 1rem;
+
+        &__list {
+            display: block;
+        }
+
+        &__link {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 1rem;
+
+            &:hover {
+                background: white;
+                color: black;
+                opacity: 1;
+                transition: all 0.3s
+            }
+        }
     }
+
 }
 
 @media screen and (max-width: 1790px) {

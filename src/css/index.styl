@@ -62,7 +62,7 @@ a {
     
     &__content{
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto 1fr;
         padding: 0 $main_shift;
         align-items: center;
     }
@@ -535,6 +535,38 @@ a {
     height: 1.5em;
     background: url('/images/icons/arrow_right.svg') no-repeat center center;
     background-size: contain;
+}
+
+.burger-menu {
+    display: grid;
+
+
+    &__content{
+        display: grid;
+            grid-template-columns: 1fr auto;
+    }
+
+    &__control {
+        display: none
+    }
+}
+
+/*Mobile versions*/
+
+@media screen and (max-width: 1790px) {
+    .burger-menu {
+        display: block;
+        position: fixed;
+        background: black
+
+        &__content {
+            display: block
+        }
+    }
+
+    .main-nav {
+        
+    }
 }
 
 @media screen and (max-width: 1790px) {

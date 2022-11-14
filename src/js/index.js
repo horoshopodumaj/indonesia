@@ -39,3 +39,37 @@ function toggleBgHeader() {
         headerNode.classList.remove(HEADER_SCROLLED_CLASS);
     }
 }
+
+/* Scroll Down */
+
+const scrollDownButton = document.getElementById("scroll-action");
+const scrollToNode = document.getElementById("scroll-to");
+
+let currentScroll = window.scrollY;
+let scrollAnimationId;
+
+scrollDownButton.addEventListener("click", (evt) => {
+    stopAnimationScroll();
+
+    currentScroll = window.scrollY;
+    startAnimationScroll(scrollToNode.offsetTop - 80);
+});
+
+function startAnimationScroll(newScrollY) {
+    const deltaScroll = newScrollY - currentScroll;
+
+    currentScroll += deltaScroll * 0.08;
+    window.scrollTo(0, currentScroll);
+
+    if (Math.abs(deltaScroll) > 1) {
+        scrollAnimationId = window.requestAnimationFrame(() => startAnimationScroll(newScrollY));
+    } else {
+        window.scrollTo(0, newScrollY);
+        stopAnimationScroll();
+    }
+}
+
+function stopAnimationScroll() {
+    window.cancelAnimationFrame(scrollAnimationId);
+    scrollAnimationId = undefined;
+}

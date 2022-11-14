@@ -13,14 +13,13 @@ body {
 }
 
 body {
+    background: $main_dark url('/images/cover.jpg') no-repeat center top;
+    background-size: 100% auto;
     color: $main_lite;
-    overflow-x: hidden;
     width: 100vw;
 }
 
 .page {
-    background: $main_dark url('/images/cover.jpg') no-repeat center top;
-    background-size: 100% auto;
     overflow: hidden;
 }
 
@@ -62,9 +61,16 @@ a {
 }
 
 .header{
-    position: absolute;
-    top: 2rem;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    margin-top: 2rem;
     width: 100%;
+    transition: all 0.3s;
+
+    &_scrolled {
+        background: rgba(0, 0, 0, 0.6);
+    }
     
     &__content{
         display: grid;
@@ -626,8 +632,7 @@ a {
 
 @media screen and (max-width: 700px) {
     .burger-menu {
-        display: none;
-        //display: block;
+        display: block;
         position: fixed;
         top: 0;
         right: 0;
@@ -640,7 +645,7 @@ a {
 
         &__content {
             height: 100vh;
-            padding: 1.3rem 0 2rem;
+            padding: 0 0 2rem;
             box-sizing: border-box;
             display: grid;
             grid-template-columns: 1fr;
@@ -651,9 +656,6 @@ a {
             display: block;
             width: 2rem;
             height: 2rem;
-            position: absolute;
-            left: calc(-4.7rem - 2rem);
-            top: 2.2rem;
             background: url('../images/icons/menu.svg') no-repeat center center;
             background-size: contain;
             border: none;
@@ -666,6 +668,14 @@ a {
         }
     }
 
+    .logo, 
+    .burger-menu__control{
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.3s;
+        position: relative;
+        z-index: 999;
+    }
+
     .page {
         transform: translate3d(0, 0, 0);
         transition: transform 0.3s;
@@ -675,15 +685,21 @@ a {
         .page{
             transform: translate3d(calc(-70vw), 0,0 );
         }
+
+        .logo,
+        .burger-menu__control {
+            transform: translate3d(-70vw, 0, 0);
+        }
         
         .cover-space__burger {
             pointer-events: auto;
             z-index: 998;
-            opacity: 1
+            opacity: 1;
         }
         .burger-menu {
+            transform: translate3d(0,0,0);
+
             &__control {
-                left: -4rem;
                 background-image: url('../images/icons/x.svg');
             }
         }
@@ -701,30 +717,23 @@ a {
             width: 100%;
             box-sizing: border-box;
             text-align: center;
-            padding: 1rem;
+            padding: 1.25rem 1.2rem;
+            transition: all 0.3s
 
-            &:hover {
-                background: white;
-                color: black;
-                opacity: 1;
-                transition: all 0.3s
-            }
-
+            &:hover,
             &_active {
                 background: white;
                 color: black !important;
                 opacity: 1;
-                transition: all 0.3s
             }
         }
     }
-
-}
-
-@media screen and (max-width: 700px) {
+    
     .header {
         &__content {
-            padding: 0 1.5rem;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between
         }
     }
 
@@ -759,10 +768,6 @@ a {
 
     .content{
         padding: 0 1.5rem 1.5rem; 
-    }
-
-    .burger-menu__control {
-        left: calc(-1.5rem - 3rem);
     }
 
     .main-title {

@@ -1,5 +1,5 @@
 doctype html
-html(lang="ru") 
+html(lang="en") 
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width,initial-scale=1")
@@ -15,7 +15,7 @@ html(lang="ru")
         header.header
             .header__content
                 a.logo(href='/')
-                    h1.logo__title QWERy
+                    h2.logo__title QWERy
                 button.burger-menu__control
                 .burger-menu
                     .burger-menu__content
@@ -28,8 +28,8 @@ html(lang="ru")
                                 li.main-nav__tem
                                     a.main-nav__link(href='#') Culture
                         label.search
-                            .search__icon
-                            input.search__form(text='text' placeholder='Search')
+                            span.search__icon
+                            input.search__form(type='text' placeholder='Search')
                 .cover-space__burger
         .page
             .cover-space
@@ -100,7 +100,7 @@ html(lang="ru")
                             .email
                                 input.email__form(type='text' placeholder="Email address")
                                 button.button.email__button(type='submit')
-                                    .button__icon.icon__right
+                                    span.button__icon.icon__right
                         .menu
                             h4.menu__title Services 
                             ul.menu__list 
